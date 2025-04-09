@@ -39,12 +39,14 @@ a{
     cursor: pointer;
     border-radius: 6px;
     
-    &:hover{
+
+    @include hover{
         border: 1px solid var(--color-hover);
         background-color: var(--color-white);
         color: var(--color-bark);
-        transition-duration: 0.3s;    
+        transition-duration: 0.3s; 
     }
+   
 }
 
 h3{

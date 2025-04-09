@@ -20,7 +20,7 @@
     }
 
     .item-link{
-        &:hover{
+        @include hover{
             color: var(--color-acent-v2);
             transition-duration: 0.3s;
         }

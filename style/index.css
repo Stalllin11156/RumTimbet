@@ -125,11 +125,21 @@ a {
   cursor: pointer;
   border-radius: 6px;
 }
-.btn:hover {
-  border: 1px solid var(--color-hover);
-  background-color: var(--color-white);
-  color: var(--color-bark);
-  transition-duration: 0.3s;
+@media (any-hover: hover) {
+  .btn:hover {
+    border: 1px solid var(--color-hover);
+    background-color: var(--color-white);
+    color: var(--color-bark);
+    transition-duration: 0.3s;
+  }
+}
+@media (any-hover: none) {
+  .btn:active {
+    border: 1px solid var(--color-hover);
+    background-color: var(--color-white);
+    color: var(--color-bark);
+    transition-duration: 0.3s;
+  }
 }
 
 h3 {
@@ -228,11 +238,21 @@ body.is-lock {
   font-size: 16px;
   font-weight: 400;
 }
-.header__item:hover {
-  color: #F2BE22;
-  text-decoration-line: underline;
-  text-decoration-color: #F2BE22;
-  transition-duration: 0.3s;
+@media (any-hover: hover) {
+  .header__item:hover {
+    color: #F2BE22;
+    text-decoration-line: underline;
+    text-decoration-color: #F2BE22;
+    transition-duration: 0.3s;
+  }
+}
+@media (any-hover: none) {
+  .header__item:active {
+    color: #F2BE22;
+    text-decoration-line: underline;
+    text-decoration-color: #F2BE22;
+    transition-duration: 0.3s;
+  }
 }
 .header__btn {
   padding: 12px 24px;
@@ -741,15 +761,29 @@ body.is-lock {
   background-color: var(--color-white);
   border-radius: 10px;
 }
-.blogs__card:hover {
-  transition-duration: 0.3s;
-  cursor: pointer;
+@media (any-hover: hover) {
+  .blogs__card:hover {
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+  .blogs__card:hover .card__title {
+    color: var(--color-acent);
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-acent);
+    transition-duration: 0.3s;
+  }
 }
-.blogs__card:hover .card__title {
-  color: var(--color-acent);
-  text-decoration-line: underline;
-  text-decoration-color: var(--color-acent);
-  transition-duration: 0.3s;
+@media (any-hover: none) {
+  .blogs__card:active {
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+  .blogs__card:active .card__title {
+    color: var(--color-acent);
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-acent);
+    transition-duration: 0.3s;
+  }
 }
 @media (width <= 1050.98px) {
   .blogs__card {
@@ -961,9 +995,17 @@ body.is-lock {
     gap: 50px;
   }
 }
-.info .item-link:hover {
-  color: var(--color-acent-v2);
-  transition-duration: 0.3s;
+@media (any-hover: hover) {
+  .info .item-link:hover {
+    color: var(--color-acent-v2);
+    transition-duration: 0.3s;
+  }
+}
+@media (any-hover: none) {
+  .info .item-link:active {
+    color: var(--color-acent-v2);
+    transition-duration: 0.3s;
+  }
 }
 .info__company {
   max-width: 450px;
