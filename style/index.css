@@ -396,7 +396,7 @@ body.is-lock {
   }
 }
 .hike__modal-video {
-  visibility: hidden;
+  display: none;
   position: fixed;
   z-index: 1000;
   inset: 0;
@@ -413,7 +413,7 @@ body.is-lock {
   }
 }
 .hike .is-active {
-  visibility: visible;
+  display: block;
 }
 .hike .conteiner {
   display: flex;

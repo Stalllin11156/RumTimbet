@@ -47,13 +47,16 @@ class Hike {
     selectors = {
         root: '[data-js-hike]',
         modalwindow: '[data-js-hike-modal-window]',
+        modalPlayer: '[data-js-hike-player]',
         mediaBtn: '[data-js-media-btn]',
     }
 
     constructor(){
         this.rootElement = document.querySelector(this.selectors.root);
         this.modalwindow = this.rootElement.querySelector(this.selectors.modalwindow);
+        this.playerModal = this.modalwindow.querySelector(this.selectors.modalPlayer);
         this.mediaBtn = this.rootElement.querySelector(this.selectors.mediaBtn)
+        this.videoURl = this.playerModal.src;
 
         this.modalBtnAddLisen()
         this.isModalWindowAddlisen()
@@ -62,14 +65,23 @@ class Hike {
     isModalWindow = () => {
         this.modalwindow.classList.toggle('is-active')
         document.querySelector('body').classList.toggle('is-lock')
+        
     }
 
     isModalWindowAddlisen = () =>{
-        this.modalwindow.addEventListener('click', ()=>{this.isModalWindow()})
+        this.modalwindow.addEventListener('click', ()=>{
+            this.isModalWindow();
+            this.playerModal.src = ''
+        })
+        
     }
 
     modalBtnAddLisen = () =>{
-        this.mediaBtn.addEventListener('click', ()=>{this.isModalWindow()})
+        this.mediaBtn.addEventListener('click', ()=>{
+            this.isModalWindow();
+            this.playerModal.src = this.videoURl;
+        })
+        
     }
 
 }
