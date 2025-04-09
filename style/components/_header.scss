@@ -1,0 +1,129 @@
+
+@use '../media' as *;
+
+.header{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+
+    &__conteiner{
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+
+        @include tablet{
+            flex-wrap: wrap;
+        }
+    }
+
+    &__overfloy{
+        @include mobile-above{
+            display: contents;
+        }
+
+        @include mobile{
+            display: none;
+        }
+    }
+    
+    &__nav{
+        @include tablet{
+            
+            @include mobile-above{
+                order: 1;
+                flex-basis: 100%;
+                margin-top: 20px;
+                padding: 20px 0;
+                border-top: 1px solid #DDDDDD;
+                border-bottom: 1px solid #DDDDDD;
+    
+                // justify-content: center;
+                text-align: center;
+                // align-items: center;
+            }
+        }
+    }
+
+    &__list{
+        @include mobile-above{
+            :not(:last-child){
+                margin-right: 24px;
+            }
+        }
+
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            :nth-child(n){
+                margin-bottom: 16px;
+            }
+        }
+    }
+    &__item{
+        color: var(--color-white);
+        font-size: 16px;
+        font-weight: 400;
+
+        &:hover{
+            color: #F2BE22;
+            text-decoration-line: underline;
+            text-decoration-color: #F2BE22;
+            transition-duration: 0.3s;
+        }
+    }
+
+    &__btn{
+        padding: 12px 24px;
+
+        &:hover{
+            background-color: var(--color-white);
+            color: var(--color-acent);
+            border: 1px solid var(--color-acent);
+        }
+        @include mobile{
+            display: none;
+        }
+    }
+
+    &__modal__btn{
+        @include mobile-above{
+            display: none;
+        }
+        position: relative;
+        z-index: 110;
+        span{
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 3px;
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+            
+            &:last-child{
+                position: relative;
+                left: 47%;
+                width: 14px;
+            }
+        }
+    }
+    
+    .modalWindow{
+        z-index: 110;
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 100px 16px 0;
+        background-color: var(--color-acent);
+
+    }
+}
+
+

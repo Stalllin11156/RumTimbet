@@ -1,0 +1,88 @@
+@use '../media' as *;
+
+.newsletter{
+
+    position: relative;
+    top: 100px;
+
+    &__titles{
+        min-width: 300px;
+        margin-right: 64px;
+        @include tablet{
+            margin-right: 40px;
+        }
+        @include tablet-s{
+            margin-bottom: 20px;
+        }
+    }
+
+    &__overlay{
+        background-color: var(--color-white);
+        padding: 40px 100px;
+        border-radius: 6px;
+        box-shadow: 0px 0px 15px #6A6A6A;
+        display: flex;
+        @include tablet{
+            padding: 24px;
+        }
+        
+        @media (width < 815px) {
+            flex-wrap: wrap;
+        }
+
+        &-form{
+            max-width: 536px;
+        }
+    }
+
+    &__form{
+        display: flex;
+        margin-bottom: 8px;
+        gap: 16px;
+
+        @include mobile{
+            flex-wrap: wrap;
+        }
+
+        
+
+        &__email{
+            display: flex;
+            flex-direction: column;
+            max-width: 280px;
+            width: 100%;
+        }
+
+        &__btn{
+            padding: 12px 24px;
+            
+            // display: block;
+            max-width: 240px;
+            min-width: 202px;
+            width: 100%;
+            // max-height: 44px;
+            // position: relative;
+            margin-top: auto;
+        }
+    }
+
+    &__input-email{
+        max-width: 280px;
+        width: 100%;
+        background-color: #F3F5F4;
+        padding: 12px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    &__confidentiality{
+        @include mobile {
+            font-size: 14px;
+        }
+        a{
+            color: black;
+            text-decoration-line: underline;
+        }
+    }
+}
+

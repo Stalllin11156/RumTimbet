@@ -1,0 +1,71 @@
+@use './media' as *;
+
+.conteiner{
+    max-width: 1220px;
+    width: 100%;
+    padding: 0px 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    @include tablet-s{
+        padding: 0px 16px;
+    }
+}
+
+
+:root{
+
+
+    --color-white: #ffff;
+    --color-acent: #1A3E3E;
+    --color-lite-grey: #F3F5F4;
+    --color-hover: #9747FF;
+    --color-bark: #000;
+    --color-acent-v2: #F2BE22;
+}
+
+
+a{
+    color: var(--color-white);
+}
+
+
+.btn{
+    color: var(--color-white);
+    background-color: var(--color-acent);
+    border: 1px solid rgba($color: #000000, $alpha: 0.0);
+    padding: 16px 36px;
+    cursor: pointer;
+    border-radius: 6px;
+    
+    &:hover{
+        border: 1px solid var(--color-hover);
+        background-color: var(--color-white);
+        color: var(--color-bark);
+        transition-duration: 0.3s;    
+    }
+}
+
+h3{
+    color: #F2BE22;
+    font-style: 24px;
+    font-weight: normal;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 26px;
+
+    @include laptop {
+        font-size: 24px;
+    }
+
+}
+
+body{
+    &.is-lock{
+        overflow: hidden;
+    }
+}
+// width 1140 - адаптация

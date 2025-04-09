@@ -1,0 +1,129 @@
+@use '../media' as *;
+
+.hike{
+    padding: 100px 0;
+
+    @include tablet{
+        padding: 60px 0;
+    }
+
+    &__modal-video{
+        visibility: hidden;
+        position: fixed;
+        z-index: 1000;
+        inset: 0;
+        background-color: rgba($color: #555353, $alpha: 0.7);
+
+        .content{
+            display: flex;
+
+            // align-items: center;
+            justify-content: center;
+            padding: 200px 20px;
+
+            @include mobile{
+                padding: 150px 16px;
+            }
+        }
+    }
+
+    .is-active{
+        visibility: visible;
+    }
+
+    .conteiner{
+        display: flex;
+        align-items: center;
+
+        @include mobile{
+            flex-direction: column;
+        }
+    }
+
+    &__media{
+        max-width: 480px;
+        width: 100%;
+        max-height: 530px;
+        height: 530px;
+        margin-right: 120px;
+        position: relative;
+
+        @include laptop {
+            max-width: 400px;
+            max-height: 450px;
+        }
+        @include tablet{
+            display: flex;
+            margin-right: 60px;
+            align-items: center;
+            :not(:last-child){
+                display: none;
+            }
+        }
+        @include mobile{
+            order: 1;
+            flex-basis: 100%;
+            margin: 40px 0 0;
+
+            width: min-content;
+            height: min-content;
+        }
+
+        .div__img-video{
+            // position: absolute;
+            position: relative;
+           
+            @include tablet-above{
+                top: -50%;
+                left: 23%;
+                cursor: pointer;
+            }
+
+            &::after{
+                content: url('../icons/playr.svg');
+                position: absolute;
+                display: block;
+                width: 50px;
+                height: 50px;
+                z-index: 4;
+                left: 43%;
+                bottom: 43%;
+                cursor: pointer;    
+
+                @include tablet{
+
+                }
+            }
+        }
+
+        &__img{
+            max-width: 350px;
+            max-height: 400px;
+            border-radius: 24px;
+
+            @include laptop{
+                max-width: 300px;
+                max-height: 350px;
+            }
+        }            
+        
+    }
+    
+ 
+
+    &__about{
+        max-width: 580px;
+
+        @include laptop{
+            // max-width: 530px;
+        }
+
+        &__titles{
+            margin-bottom: 40px;
+        }
+
+        &__text{
+            margin-bottom: 40px;
+        }
+    }
+}

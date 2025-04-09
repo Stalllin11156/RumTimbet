@@ -1,0 +1,120 @@
+@use '../media' as *;
+@use '../globals' as *;
+
+.info{
+    padding: 200px 0px 80px;
+
+    color: var(--color-white);
+    background-color: var(--color-acent);
+    display: flex;
+    .conteiner{
+        display: flex;
+        @include tablet{
+            flex-wrap: wrap;
+            row-gap: 50px;
+        }
+        @include mobile{
+            gap: 50px;
+        }
+        
+    }
+
+    .item-link{
+        &:hover{
+            color: var(--color-acent-v2);
+            transition-duration: 0.3s;
+        }
+    }
+
+    &__company{
+        max-width: 450px;
+        margin-right: 20px;
+        @include mobile{
+            margin-right: 0;
+            
+        }
+
+        &__title{
+            margin-bottom: 18px;
+        }
+        &__about{
+            margin-bottom: 80px;
+            @include tablet-s{
+                margin-bottom: 40px;
+            }
+        }
+        &__contact{
+            &__media{
+                margin-bottom: 32px;
+                :first-child{
+                    margin-right: 10px;
+                }
+            }
+            &__sosial{
+                display: flex;
+                gap: 16px;
+
+                .img{
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    &__services{
+        max-width: 280px;
+        margin-right: 120px;
+        @include laptop{
+            margin-right: 100px;
+        }
+        @include mobile{
+            margin-right: 0;
+        }
+        &__title{
+            margin-bottom: 20px;
+        }
+        &__list{
+            :not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__important{
+        max-width: 280px;
+
+        &__title{
+            margin-bottom: 20px;
+        }
+
+        &__list{
+            :not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+
+
+
+}
+
+
+.bottom{
+    background-color: black;
+    padding: 16px 0px;
+
+    .conteiner{
+        display: flex;
+        justify-content: space-between;
+        @include mobile{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .confidentiality{
+        text-decoration-line: underline;
+    }
+}

@@ -1,0 +1,102 @@
+@use '../media' as *;
+
+.hero{
+    padding-top: 470px;
+    padding-bottom: 82px;
+    @include mobile{
+        padding-top: 350px;
+        padding-bottom: 60px;
+    }
+    
+
+    background-image: url("../img/gori.png");
+    background-position: top;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    object-fit: cover;
+
+    @media (width > 1250px) {
+        background-size: 100% 100%;
+    }  
+
+    color: var(--color-white);
+
+    &__title{
+        max-width: 1000px;
+        font-size: 50px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+
+        @include tablet{
+            font-size: 45px;
+        }
+
+        @include mobile{
+            font-size: 35px;
+        }
+
+        @media (width <= 430px){
+            font-size: 28px;
+        }
+
+
+    }
+
+
+    &__form{
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        gap: 10px;
+
+        border-radius: 10px;
+        background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+
+        @include tablet-s{
+            display: none;
+        }
+
+    }
+
+    .form{
+        
+        &__overflow{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            max-width: 270px;
+            width: 100%;
+        }
+
+        &__field{
+            box-sizing: border-box;
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: solid 1px #FFFFFF;
+            border-radius: 6px;
+        }
+
+        &__btn{
+            color: black;
+            padding: 16px 36px;
+            // flex-shrink: 0;
+            font-weight: 600;
+
+            min-width: 185px;
+
+            height: 52px;
+            background-color: #fff;
+            border-radius: 6px;
+        }
+    }
+
+    &__modal{
+        @include tablet-s-above{
+            display: none;
+        }
+    }
+}
